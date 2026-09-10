@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from music.models import Album, Track
+from music.models import Album, Single, Track
 
 
 class Command(BaseCommand):
@@ -115,3 +115,27 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS("Discography loaded successfully")
         )
+
+        singles = [
+            ("fomo", 2026, 1),
+            ("hangover (x__x)", 2026, 2),
+            ("2023 ^_^", 2026, 3),
+            ("расскажи ^_^", 2026, 4),
+            ("баллада об оппчике", 2025, 5),
+            ("mlg moment", 2025, 6),
+            ("егор привет", 2025, 7),
+            ("не умею...", 2024, 8),
+            ("ты ты ты", 2024, 9),
+            ("паранойя!", 2023, 10),
+            ("качели", 2023, 11),
+            ("3", 2023, 12),
+        ]
+
+        for title, year, order in singles:
+            Single.objects.update_or_create(
+                title=title,
+                defaults={
+                    "release_year": year,
+                    "order": order,
+                },
+            )

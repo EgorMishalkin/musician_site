@@ -25,3 +25,16 @@ class Track(models.Model):
 
     def __str__(self):
         return f"{self.number}. {self.title}"
+
+
+class Single(models.Model):
+    title = models.CharField(max_length=100)
+    release_year = models.PositiveSmallIntegerField()
+    url = models.URLField(blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return self.title

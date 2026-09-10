@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Album
+from .models import Album, Single
 
 
 def home(request):
@@ -13,11 +13,16 @@ def home(request):
     else:
         selected_album = albums.first()
 
+    singles = Single.objects.all()
+
+
+
     return render(
         request,
         "music/home.html",
         {
             "albums": albums,
             "selected_album": selected_album,
+            "singles": singles,
         },
     )

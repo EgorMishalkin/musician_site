@@ -1,8 +1,12 @@
 {% extends "music/base.html" %}
 
 {% block content %}
-<main>
-    <h1>хонисаклер</h1>
+<main class="page">
+
+    <header class="header">
+        <h1>хонисаклер</h1>
+        <span>RU / EN</span>
+    </header>
 
     <section class="discography">
 
@@ -10,10 +14,8 @@
             <h2>discography</h2>
 
             {% for album in albums %}
-                <a
-                    href="?album={{ album.slug }}"
-                    style="color: {{ album.accent_color }};"
-                >
+                <a href="?album={{ album.slug }}"
+                   style="color: {{ album.accent_color }};">
                     {% if album == selected_album %}→ {% endif %}
                     {{ album.title }}
                 </a>
@@ -21,37 +23,78 @@
         </div>
 
         {% if selected_album %}
-            <div
-                class="album-info"
-                style="color: {{ selected_album.accent_color }};"
-            >
+
+            <div class="album-info"
+                 style="color: {{ selected_album.accent_color }};">
+
                 <h2>{{ selected_album.title }}</h2>
 
                 <p>
                     {{ selected_album.release_year }}
-                    ·
-                    {{ selected_album.release_type }}
+                    · {{ selected_album.release_type }}
                 </p>
+
+                <div class="cover-placeholder">
+                    cover
+                </div>
+
+                <div class="album-links">
+                    spotify / yandex / soundcloud / vk / youtube
+                </div>
+
             </div>
 
-            <div
-                class="track-list"
-                style="color: {{ selected_album.accent_color }};"
-            >
+            <div class="track-list"
+                 style="color: {{ selected_album.accent_color }};">
+
                 {% for track in selected_album.tracks.all %}
                     <div class="track">
-                        <span>
-                            {{ track.number }}. {{ track.title }}
+                        <span class="track-name">
+                            {{ track.number|stringformat:"02d" }}
+                            {{ track.title }}
                         </span>
 
-                        <span>
-                            {{ track.duration }}
-                        </span>
+                        <span>{{ track.duration }}</span>
                     </div>
                 {% endfor %}
+
             </div>
+
         {% endif %}
 
     </section>
+
+
+    <section class="singles">
+        <h2>singles</h2>
+
+        {% for single in singles %}
+            <div class="single">
+                <span>{{ single.title }}</span>
+                <span>{{ single.release_year }}</span>
+
+                {% if single.url %}
+                    <a href="{{ single.url }}">listen ↗</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </section>
+
+
+    <section class="bottom">
+        <div class="links">
+            <h2>links</h2>
+
+            <a href="#">telegram</a>
+            <a href="#">youtube</a>
+            <a href="#">soundcloud</a>
+            <a href="#">vk</a>
+        </div>
+
+        <div class="photo-placeholder">
+            photo
+        </div>
+    </section>
+
 </main>
 {% endblock %}

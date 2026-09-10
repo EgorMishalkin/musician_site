@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Album, Track
+from .models import Album, Single, Track
+
 
 
 class TrackInline(admin.TabularInline):
@@ -21,3 +22,9 @@ class TrackAdmin(admin.ModelAdmin):
     list_display = ("number", "title", "album", "duration")
     list_filter = ("album",)
     ordering = ("album", "number")
+
+
+@admin.register(Single)
+class SingleAdmin(admin.ModelAdmin):
+    list_display = ("title", "release_year", "order")
+    list_editable = ("order",)
