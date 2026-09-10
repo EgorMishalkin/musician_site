@@ -1,15 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Album
 
 
 def home(request):
-    album = Album.objects.first()
+    albums = Album.objects.prefetch_related("tracks").order_by("order")
+
+    selected_slug = request.GET.get("album")
+
+    if selected_slug:
+        selected_album = get_object_or_404(albums, slug=selected_slug)
+    else:
+        selected_album = albums.first()
 
     return render(
         request,
         "music/home.html",
         {
-            "album": album,
+            "albums": albums,
+            "selected_album": selected_album,
         },
     )

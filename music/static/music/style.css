@@ -1,20 +1,28 @@
-* {
-    box-sizing: border-box;
+.discography {
+    display: grid;
+    grid-template-columns: 220px 400px 1fr;
+    gap: 60px;
+    margin-top: 80px;
 }
 
-body {
-    margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+.album-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-main {
-    padding: 32px;
+.album-list a {
+    text-decoration: none;
+    margin-bottom: 8px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: normal;
+.album-info h2 {
+    margin-top: 0;
+}
+
+.track {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 8px;
 }

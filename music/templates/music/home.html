@@ -4,17 +4,54 @@
 <main>
     <h1>хонисаклер</h1>
 
-    {% if album %}
-        <h2>{{ album.title }}</h2>
-        <p>{{ album.release_year }}</p>
+    <section class="discography">
 
-        <ul>
-            {% for track in album.tracks.all %}
-                <li>
-                    {{ track.number }}. {{ track.title }} — {{ track.duration }}
-                </li>
+        <div class="album-list">
+            <h2>discography</h2>
+
+            {% for album in albums %}
+                <a
+                    href="?album={{ album.slug }}"
+                    style="color: {{ album.accent_color }};"
+                >
+                    {% if album == selected_album %}→ {% endif %}
+                    {{ album.title }}
+                </a>
             {% endfor %}
-        </ul>
-    {% endif %}
+        </div>
+
+        {% if selected_album %}
+            <div
+                class="album-info"
+                style="color: {{ selected_album.accent_color }};"
+            >
+                <h2>{{ selected_album.title }}</h2>
+
+                <p>
+                    {{ selected_album.release_year }}
+                    ·
+                    {{ selected_album.release_type }}
+                </p>
+            </div>
+
+            <div
+                class="track-list"
+                style="color: {{ selected_album.accent_color }};"
+            >
+                {% for track in selected_album.tracks.all %}
+                    <div class="track">
+                        <span>
+                            {{ track.number }}. {{ track.title }}
+                        </span>
+
+                        <span>
+                            {{ track.duration }}
+                        </span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </section>
 </main>
 {% endblock %}
