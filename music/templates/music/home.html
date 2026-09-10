@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>хонисаклер</title>
-</head>
-<body>
+{% extends "music/base.html" %}
+
+{% block content %}
+<main>
     <h1>хонисаклер</h1>
-</body>
-</html>
+
+    {% if album %}
+        <h2>{{ album.title }}</h2>
+        <p>{{ album.release_year }}</p>
+
+        <ul>
+            {% for track in album.tracks.all %}
+                <li>
+                    {{ track.number }}. {{ track.title }} — {{ track.duration }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</main>
+{% endblock %}
