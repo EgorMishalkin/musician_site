@@ -8,9 +8,13 @@ class Album(models.Model):
     release_type = models.CharField(max_length=20)
     accent_color = models.CharField(max_length=7)
     order = models.PositiveSmallIntegerField(default=0)
+    cover = models.ImageField(upload_to="covers/", blank=True)
+    upc = models.CharField(max_length=20, blank=True, unique=True, null=True)
+
 
     def __str__(self):
         return self.title
+
 
 
 class Track(models.Model):
@@ -38,3 +42,20 @@ class Single(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AlbumLink(models.Model):
+    album = models.ForeignKey(
+        Album,
+        on_delete=models.CASCADE,
+        related_name="links",
+    )
+    name = models.CharField(max_length=50)
+    url = models.URLField()
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return f"{self.album.title} — {self.name}"

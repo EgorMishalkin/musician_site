@@ -89,8 +89,19 @@ a {
 }
 
 .album-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 12px;
-    line-height: 1.6;
+}
+
+.album-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.album-links a:hover {
+    text-decoration: underline;
 }
 
 .track-list {
@@ -159,4 +170,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.album-cover {
+    display: block;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
 }

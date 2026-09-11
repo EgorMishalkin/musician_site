@@ -34,13 +34,27 @@
                     · {{ selected_album.release_type }}
                 </p>
 
-                <div class="cover-placeholder">
-                    cover
-                </div>
+                {% if selected_album.cover %}
+                <img
+                    class="album-cover"
+                    src="{{ selected_album.cover.url }}"
+                    alt="{{ selected_album.title }}"
+                >
+                {% else %}
+                    <div class="cover-placeholder">
+                        cover
+                    </div>
+                {% endif %}
 
+                {% if selected_album.links.all %}
                 <div class="album-links">
-                    spotify / yandex / soundcloud / vk / youtube
+                    {% for link in selected_album.links.all %}
+                        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                            {{ link.name }}
+                        </a>
+                    {% endfor %}
                 </div>
+{% endif %}
 
             </div>
 
