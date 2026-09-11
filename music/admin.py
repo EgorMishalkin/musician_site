@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Album, AlbumLink, Single, SocialLink, Track
-
+from .models import Album, AlbumLink, ContactMessage, Single, SocialLink, Track
 
 
 class TrackInline(admin.TabularInline):
@@ -34,3 +33,16 @@ class SingleAdmin(admin.ModelAdmin):
 class SocialLinkAdmin(admin.ModelAdmin):
     list_display = ("name", "url", "order")
     list_editable = ("order",)
+
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "email",
+        "subject",
+        "reply_requested",
+        "created_at",
+    )
+
+    readonly_fields = ("created_at",)

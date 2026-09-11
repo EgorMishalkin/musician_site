@@ -202,3 +202,119 @@ a {
 .language-switch button:hover {
     color: #f2f2f2;
 }
+
+.contact {
+    margin-top: 140px;
+    max-width: 700px;
+}
+
+.contact h2 {
+    margin: 0 0 24px;
+    color: #777;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-row {
+    display: flex;
+    gap: 18px;
+}
+
+.contact-row > * {
+    flex: 1;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 0;
+
+    border: 0;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+
+    background: transparent;
+    color: #f2f2f2;
+
+    font: inherit;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #f2f2f2;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666;
+}
+
+.contact-form select {
+    cursor: pointer;
+}
+
+.contact-form select option {
+    background: #000;
+    color: #f2f2f2;
+}
+
+.contact-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reply-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #888;
+    cursor: pointer;
+}
+
+.reply-checkbox input {
+    accent-color: #f2f2f2;
+}
+
+.contact-form button {
+    padding: 0;
+
+    border: 0;
+    background: none;
+
+    color: #f2f2f2;
+    font: inherit;
+
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    text-decoration: underline;
+}
+
+.contact-success {
+    margin-bottom: 24px;
+    color: #777;
+}
+
+.contact-errors {
+    color: #ff3b30;
+    font-size: 12px;
+}

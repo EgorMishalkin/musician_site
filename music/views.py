@@ -1,22 +1,43 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 
+from .forms import ContactMessageForm
 from .models import Album, Single, SocialLink
 
+
 def home(request):
-    albums = Album.objects.prefetch_related("tracks").order_by("order")
+    albums = Album.objects.prefetch_related("tracks", "links").order_by("order")
+    singles = Single.objects.all()
+    social_links = SocialLink.objects.all()
 
     selected_slug = request.GET.get("album")
 
     if selected_slug:
-        selected_album = get_object_or_404(albums, slug=selected_slug)
+        selected_album = get_object_or_404(
+            albums,
+            slug=selected_slug,
+        )
     else:
-        selected_album = albums.first()
+        cookie_slug = request.COOKIES.get("last_album")
 
-    singles = Single.objects.all()
+        selected_album = (
+            albums.filter(slug=cookie_slug).first()
+            if cookie_slug
+            else None
+        )
 
-    social_links = SocialLink.objects.all()
+        if selected_album is None:
+            selected_album = albums.first()
 
-    return render(
+    if request.method == "POST":
+        contact_form = ContactMessageForm(request.POST)
+
+        if contact_form.is_valid():
+            contact_form.save()
+            return redirect("/?sent=1#contact")
+    else:
+        contact_form = ContactMessageForm()
+
+    response = render(
         request,
         "music/home.html",
         {
@@ -24,5 +45,16 @@ def home(request):
             "selected_album": selected_album,
             "singles": singles,
             "social_links": social_links,
+            "contact_form": contact_form,
         },
     )
+
+    if selected_album:
+        response.set_cookie(
+            "last_album",
+            selected_album.slug,
+            max_age=60 * 60 * 24 * 30,
+            samesite="Lax",
+        )
+
+    return response

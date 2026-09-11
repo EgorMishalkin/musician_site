@@ -130,5 +130,49 @@
         </div>
     </section>
 
+    <section class="contact" id="contact">
+    <h2>{% translate "Написать" %}</h2>
+
+    {% if request.GET.sent %}
+        <p class="contact-success">
+            {% translate "Сообщение отправлено" %}
+        </p>
+    {% endif %}
+
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+
+        <div class="contact-row">
+            {{ contact_form.name }}
+            {{ contact_form.email }}
+        </div>
+
+        <div class="contact-row">
+            {{ contact_form.subject }}
+        </div>
+
+        <div class="contact-row">
+            {{ contact_form.message }}
+        </div>
+
+        <div class="contact-bottom">
+            <label class="reply-checkbox">
+                {{ contact_form.reply_requested }}
+                <span>{% translate "Нужен ответ" %}</span>
+            </label>
+
+            <button type="submit">
+                {% translate "Отправить" %} ↗
+            </button>
+        </div>
+
+        {% if contact_form.errors %}
+            <div class="contact-errors">
+                {{ contact_form.errors }}
+            </div>
+        {% endif %}
+        </form>
+    </section>
+
 </main>
 {% endblock %}

@@ -69,3 +69,23 @@ class SocialLink(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ContactMessage(models.Model):
+    class Subject(models.TextChoices):
+        MUSIC = "music", "Музыка"
+        COLLAB = "collab", "Сотрудничество"
+        OTHER = "other", "Другое"
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(
+        max_length=20,
+        choices=Subject.choices,
+    )
+    message = models.TextField()
+    reply_requested = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} — {self.email}"
