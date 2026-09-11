@@ -15,8 +15,6 @@ class Album(models.Model):
     def __str__(self):
         return self.title
 
-
-
 class Track(models.Model):
     album = models.ForeignKey(
         Album,
@@ -59,3 +57,15 @@ class AlbumLink(models.Model):
 
     def __str__(self):
         return f"{self.album.title} — {self.name}"
+
+
+class SocialLink(models.Model):
+    name = models.CharField(max_length=50)
+    url = models.URLField()
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return self.name

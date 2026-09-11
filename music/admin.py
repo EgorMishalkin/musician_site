@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Album, Single, Track
+from .models import Album, AlbumLink, Single, SocialLink, Track
 
 
 
@@ -27,4 +27,10 @@ class TrackAdmin(admin.ModelAdmin):
 @admin.register(Single)
 class SingleAdmin(admin.ModelAdmin):
     list_display = ("title", "release_year", "order")
+    list_editable = ("order",)
+
+
+@admin.register(SocialLink)
+class SocialLinkAdmin(admin.ModelAdmin):
+    list_display = ("name", "url", "order")
     list_editable = ("order",)

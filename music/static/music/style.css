@@ -178,3 +178,27 @@ a {
     height: 400px;
     object-fit: cover;
 }
+
+
+.language-switch {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.language-switch form {
+    margin: 0;
+}
+
+.language-switch button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #888;
+    font: inherit;
+    cursor: pointer;
+}
+
+.language-switch button:hover {
+    color: #f2f2f2;
+}
