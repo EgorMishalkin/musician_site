@@ -1,6 +1,14 @@
 from django.contrib import admin
 
-from .models import Album, AlbumLink, ContactMessage, Single, SiteSettings, SocialLink, Track
+from .models import (
+    Album,
+    AlbumLink,
+    ContactMessage,
+    Single,
+    SiteSettings,
+    SocialLink,
+    Track,
+)
 
 
 class TrackInline(admin.TabularInline):
@@ -8,30 +16,56 @@ class TrackInline(admin.TabularInline):
     extra = 0
 
 
+class AlbumLinkInline(admin.TabularInline):
+    model = AlbumLink
+    extra = 0
+
+
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ("title", "release_year", "release_type", "order")
+    list_display = (
+        "title",
+        "release_year",
+        "release_type",
+        "order",
+    )
     list_editable = ("order",)
     prepopulated_fields = {"slug": ("title",)}
-    inlines = [TrackInline]
+    inlines = [
+        TrackInline,
+        AlbumLinkInline,
+    ]
 
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ("number", "title", "album", "duration")
+    list_display = (
+        "number",
+        "title",
+        "album",
+        "duration",
+    )
     list_filter = ("album",)
     ordering = ("album", "number")
 
 
 @admin.register(Single)
 class SingleAdmin(admin.ModelAdmin):
-    list_display = ("title", "release_year", "order")
+    list_display = (
+        "title",
+        "release_year",
+        "order",
+    )
     list_editable = ("order",)
 
 
 @admin.register(SocialLink)
 class SocialLinkAdmin(admin.ModelAdmin):
-    list_display = ("name", "url", "order")
+    list_display = (
+        "name",
+        "url",
+        "order",
+    )
     list_editable = ("order",)
 
 
@@ -44,7 +78,6 @@ class ContactMessageAdmin(admin.ModelAdmin):
         "reply_requested",
         "created_at",
     )
-
     readonly_fields = ("created_at",)
 
 

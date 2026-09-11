@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 
 from .forms import ContactMessageForm
 from .models import Album, Single, SiteSettings, SocialLink
@@ -32,7 +33,16 @@ def home(request):
 
         if contact_form.is_valid():
             contact_form.save()
-            return redirect("/?sent=1#contact")
+
+            url = reverse("home")
+
+            if selected_album:
+                return redirect(
+                    f"{url}?album={selected_album.slug}&sent=1#contact"
+                )
+
+            return redirect(f"{url}?sent=1#contact")
+
     else:
         contact_form = ContactMessageForm()
 
