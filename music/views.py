@@ -1,14 +1,13 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import ContactMessageForm
-from .models import Album, Single, SocialLink
-
+from .models import Album, Single, SiteSettings, SocialLink
 
 def home(request):
     albums = Album.objects.prefetch_related("tracks", "links").order_by("order")
     singles = Single.objects.all()
     social_links = SocialLink.objects.all()
-
+    site_settings = SiteSettings.objects.first()
     selected_slug = request.GET.get("album")
 
     if selected_slug:
@@ -46,6 +45,7 @@ def home(request):
             "singles": singles,
             "social_links": social_links,
             "contact_form": contact_form,
+            "site_settings": site_settings,
         },
     )
 
@@ -56,5 +56,7 @@ def home(request):
             max_age=60 * 60 * 24 * 30,
             samesite="Lax",
         )
+
+
 
     return response

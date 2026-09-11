@@ -89,3 +89,13 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} — {self.email}"
+
+
+class SiteSettings(models.Model):
+    artist_photo = models.ImageField(
+        upload_to="photos/",
+        blank=True,
+    )
+
+    def __str__(self):
+        return "Настройки сайта"

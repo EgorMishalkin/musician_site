@@ -99,16 +99,23 @@
 
 
     <section class="singles">
-        <h2>{% translate "синглы" %}</h2>
+    <h2>{% translate "cинглы" %}</h2>
 
         {% for single in singles %}
             <div class="single">
-                <span>{{ single.title }}</span>
-                <span>{{ single.release_year }}</span>
-
                 {% if single.url %}
-                    <a href="{{ single.url }}">listen ↗</a>
+                    <a
+                        href="{{ single.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ single.title }}
+                    </a>
+                {% else %}
+                    <span>{{ single.title }}</span>
                 {% endif %}
+
+                <span>{{ single.release_year }}</span>
             </div>
         {% endfor %}
     </section>
@@ -125,9 +132,13 @@
             {% endfor %}
         </div>
 
-        <div class="photo-placeholder">
-            photo
-        </div>
+        {% if site_settings.artist_photo %}
+        <img
+            class="artist-photo"
+            src="{{ site_settings.artist_photo.url }}"
+            alt="хонисаклер"
+        >
+{% endif %}
     </section>
 
     <section class="contact" id="contact">
@@ -176,3 +187,113 @@
 
 </main>
 {% endblock %}
+
+
+@media (max-width: 900px) {
+    .page {
+        padding: 24px 20px 40px;
+    }
+
+    .header {
+        align-items: center;
+    }
+
+    .discography {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 70px;
+    }
+
+    .album-list {
+        margin-bottom: 10px;
+    }
+
+    .album-info {
+        width: 100%;
+    }
+
+    .album-cover,
+    .cover-placeholder {
+        width: min(400px, 100%);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .track-list {
+        padding-top: 0;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .track {
+        grid-template-columns: 1fr auto;
+    }
+
+    .singles {
+        margin-top: 100px;
+        width: 100%;
+    }
+
+    .bottom {
+        margin-top: 100px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .artist-photo,
+    .photo-placeholder {
+        width: 240px;
+        height: 240px;
+        align-self: flex-end;
+    }
+
+    .contact {
+        margin-top: 100px;
+        width: 100%;
+    }
+
+    .contact-row {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    .page {
+        padding: 20px 16px 35px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .discography {
+        margin-top: 55px;
+        gap: 32px;
+    }
+
+    .album-cover,
+    .cover-placeholder {
+        width: 100%;
+    }
+
+    .single {
+        grid-template-columns: 1fr auto;
+    }
+
+    .artist-photo,
+    .photo-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-bottom {
+        align-items: flex-start;
+        gap: 20px;
+    }
+}

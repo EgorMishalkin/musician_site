@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Album, AlbumLink, ContactMessage, Single, SocialLink, Track
+from .models import Album, AlbumLink, ContactMessage, Single, SiteSettings, SocialLink, Track
 
 
 class TrackInline(admin.TabularInline):
@@ -46,3 +46,12 @@ class ContactMessageAdmin(admin.ModelAdmin):
     )
 
     readonly_fields = ("created_at",)
+
+
+@admin.register(SiteSettings)
+class SiteSettingsAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return not SiteSettings.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False

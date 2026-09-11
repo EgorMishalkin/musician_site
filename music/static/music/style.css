@@ -318,3 +318,115 @@ a {
     color: #ff3b30;
     font-size: 12px;
 }
+
+
+.artist-photo {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .page {
+        padding: 24px 20px 40px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .discography {
+        display: block;
+        margin-top: 60px;
+    }
+
+    .album-list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 45px;
+    }
+
+    .album-list a {
+        margin-bottom: 7px;
+    }
+
+    .album-info {
+        width: 100%;
+    }
+
+    .album-info h2 {
+        margin-top: 0;
+    }
+
+    .album-cover,
+    .cover-placeholder {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .album-links {
+        margin-top: 12px;
+    }
+
+    .track-list {
+        width: 100%;
+        max-width: 500px;
+        padding-top: 0;
+        margin-top: 35px;
+    }
+
+    .track {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        margin-bottom: 8px;
+    }
+
+    .singles {
+        width: 100%;
+        max-width: none;
+        margin-top: 100px;
+    }
+
+    .single {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 60px;
+        margin-top: 100px;
+    }
+
+    .artist-photo,
+    .photo-placeholder {
+        width: 220px;
+        height: 220px;
+        align-self: flex-end;
+    }
+
+    .contact {
+        width: 100%;
+        max-width: none;
+        margin-top: 100px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+    }
+}

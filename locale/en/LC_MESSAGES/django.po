@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-11 15:10+0300\n"
+"POT-Creation-Date: 2026-09-11 16:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,25 @@ msgid "дискография"
 msgstr "discography"
 
 #: .\music\templates\music\home.html:102
-msgid "синглы"
+msgid "cинглы"
 msgstr "singles"
 
-#: .\music\templates\music\home.html:119
+#: .\music\templates\music\home.html:126
 msgid "ссылки"
 msgstr "links"
 
+#: .\music\templates\music\home.html:145
+msgid "Написать"
+msgstr ""
+
+#: .\music\templates\music\home.html:149
+msgid "Сообщение отправлено"
+msgstr ""
+
+#: .\music\templates\music\home.html:172
+msgid "Нужен ответ"
+msgstr ""
+
+#: .\music\templates\music\home.html:176
+msgid "Отправить"
+msgstr ""
