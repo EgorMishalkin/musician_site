@@ -1,4 +1,4 @@
-# Хонисаклер — Django musician website
+# хонисаклер — Django musician website
 
 Учебный проект по дисциплине «Технологии web-программирования».
 
@@ -25,45 +25,72 @@
 
 ## Запуск проекта
 
-Скачать ZIP ветки `localhost-branch `, распаковать архив и открыть PowerShell в папке проекта.
+Скачать ZIP ветки `localhost-branch`, распаковать архив и открыть PowerShell в папке проекта.
 
 ### 1. Создать виртуальное окружение
 
 ```powershell
-python -m venv .venv
+py -3.13 -m venv .venv
 ```
 
-### 2. Активировать виртуальное окружение
+### 2. Разрешить запуск скриптов в текущем окне PowerShell
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Настройка действует только до закрытия текущего окна PowerShell.
+
+### 3. Активировать виртуальное окружение
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 3. Установить зависимости
+После активации в начале строки должно появиться:
+
+```text
+(.venv)
+```
+
+### 4. Установить зависимости
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-### 4. Создать локальный файл настроек
+### 5. Создать локальный файл настроек
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-### 5. Выполнить миграции
+### 6. Выполнить миграции
 
 ```powershell
 python manage.py migrate
 ```
 
-### 6. Загрузить демонстрационные данные
+### 7. Загрузить демонстрационные данные
 
 ```powershell
 python manage.py loaddata defense_data.json
 ```
 
-### 7. Запустить сервер
+### 8. Запустить unit-тесты
+
+```powershell
+python manage.py test
+```
+
+Ожидаемый результат:
+
+```text
+Ran 4 tests
+OK
+```
+
+### 9. Запустить сервер
 
 ```powershell
 python manage.py runserver
@@ -73,31 +100,7 @@ python manage.py runserver
 
 http://127.0.0.1:8000/
 
-## Django Admin
-
-Чтобы использовать административную панель, необходимо создать суперпользователя:
-
-```powershell
-python manage.py createsuperuser
-```
-
-После этого запустить сервер:
-
-```powershell
-python manage.py runserver
-```
-
-Административная панель доступна по адресу:
-
-http://127.0.0.1:8000/admin/
-
-## Unit-тесты
-
-Для запуска тестов:
-
-```powershell
-python manage.py test
-```
+Важно: локальный Django-сервер запускается по HTTP, а не HTTPS.
 
 В проекте реализованы тесты:
 
