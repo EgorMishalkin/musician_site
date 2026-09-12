@@ -1,0 +1,893 @@
+[
+{
+  "model": "music.album",
+  "pk": 1,
+  "fields": {
+    "title": "ништ€к музыка",
+    "slug": "nishtyak-muzyka",
+    "release_year": 2026,
+    "release_type": "ep",
+    "accent_color": "#7CFF6B",
+    "order": 1,
+    "cover": "covers/691ae11f-0ddd-4d51-9b03-f4bc52007c5b.jpg",
+    "upc": "5063825050402"
+  }
+},
+{
+  "model": "music.album",
+  "pk": 2,
+  "fields": {
+    "title": "ништ€к музик",
+    "slug": "nishtyak-muzik",
+    "release_year": 2025,
+    "release_type": "ep",
+    "accent_color": "#B6FF00",
+    "order": 2,
+    "cover": "covers/image.png",
+    "upc": "4741534754965"
+  }
+},
+{
+  "model": "music.album",
+  "pk": 3,
+  "fields": {
+    "title": "neo emo",
+    "slug": "neo-emo",
+    "release_year": 2024,
+    "release_type": "ep",
+    "accent_color": "#2457FF",
+    "order": 3,
+    "cover": "covers/neo_emo_by_хонисаклер.jpg",
+    "upc": "4741534574716"
+  }
+},
+{
+  "model": "music.album",
+  "pk": 4,
+  "fields": {
+    "title": "слабый персонаж",
+    "slug": "slabyy-personazh",
+    "release_year": 2023,
+    "release_type": "album",
+    "accent_color": "#FF3B30",
+    "order": 4,
+    "cover": "covers/photo_5368551095724529477_y.jpg",
+    "upc": "5063316051987"
+  }
+},
+{
+  "model": "music.album",
+  "pk": 5,
+  "fields": {
+    "title": "sad boys club",
+    "slug": "sad-boys-club",
+    "release_year": 2022,
+    "release_type": "album",
+    "accent_color": "#D4A800",
+    "order": 5,
+    "cover": "covers/photo_5472401794329073668_y.jpg",
+    "upc": "3617050234056"
+  }
+},
+{
+  "model": "music.album",
+  "pk": 6,
+  "fields": {
+    "title": "питерский альбом",
+    "slug": "piterskij-albom",
+    "release_year": 2026,
+    "release_type": "album",
+    "accent_color": "#d20d29",
+    "order": 0,
+    "cover": "covers/cover.png",
+    "upc": null
+  }
+},
+{
+  "model": "music.track",
+  "pk": 1,
+  "fields": {
+    "album": 1,
+    "number": 1,
+    "title": "дуралеи",
+    "duration": "2:15"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 2,
+  "fields": {
+    "album": 1,
+    "number": 2,
+    "title": "ништ€к музыка",
+    "duration": "1:56"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 3,
+  "fields": {
+    "album": 1,
+    "number": 3,
+    "title": "хонибургер 2",
+    "duration": "2:19"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 4,
+  "fields": {
+    "album": 1,
+    "number": 4,
+    "title": "детка 0_0",
+    "duration": "2:03"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 5,
+  "fields": {
+    "album": 2,
+    "number": 1,
+    "title": "шмоук",
+    "duration": "2:20"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 6,
+  "fields": {
+    "album": 2,
+    "number": 2,
+    "title": "ништ€к music",
+    "duration": "1:57"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 7,
+  "fields": {
+    "album": 2,
+    "number": 3,
+    "title": "хонибургер",
+    "duration": "2:19"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 8,
+  "fields": {
+    "album": 2,
+    "number": 4,
+    "title": "бейби ^_^",
+    "duration": "2:01"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 9,
+  "fields": {
+    "album": 3,
+    "number": 1,
+    "title": "пережить",
+    "duration": "2:10"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 10,
+  "fields": {
+    "album": 3,
+    "number": 2,
+    "title": "бездарность",
+    "duration": "2:01"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 11,
+  "fields": {
+    "album": 3,
+    "number": 3,
+    "title": "boyfriend XD",
+    "duration": "4:20"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 12,
+  "fields": {
+    "album": 3,
+    "number": 4,
+    "title": "сколько?",
+    "duration": "2:27"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 13,
+  "fields": {
+    "album": 3,
+    "number": 5,
+    "title": "вера",
+    "duration": "2:27"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 14,
+  "fields": {
+    "album": 4,
+    "number": 1,
+    "title": "опенинг",
+    "duration": "2:17"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 15,
+  "fields": {
+    "album": 4,
+    "number": 2,
+    "title": "дратьс€!",
+    "duration": "2:05"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 16,
+  "fields": {
+    "album": 4,
+    "number": 3,
+    "title": "бо€тьс€",
+    "duration": "2:17"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 17,
+  "fields": {
+    "album": 4,
+    "number": 4,
+    "title": "слабый персонаж",
+    "duration": "3:00"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 18,
+  "fields": {
+    "album": 4,
+    "number": 5,
+    "title": "бич пакет",
+    "duration": "2:58"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 19,
+  "fields": {
+    "album": 4,
+    "number": 6,
+    "title": "молодым и злым",
+    "duration": "2:18"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 20,
+  "fields": {
+    "album": 4,
+    "number": 7,
+    "title": "о свободе",
+    "duration": "2:03"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 21,
+  "fields": {
+    "album": 4,
+    "number": 8,
+    "title": "пазла",
+    "duration": "2:47"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 22,
+  "fields": {
+    "album": 4,
+    "number": 9,
+    "title": "трудности",
+    "duration": "2:50"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 23,
+  "fields": {
+    "album": 4,
+    "number": 10,
+    "title": "воронка",
+    "duration": "2:59"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 24,
+  "fields": {
+    "album": 4,
+    "number": 11,
+    "title": "€ не знаю",
+    "duration": "2:10"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 25,
+  "fields": {
+    "album": 4,
+    "number": 12,
+    "title": "искры",
+    "duration": "3:12"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 26,
+  "fields": {
+    "album": 4,
+    "number": 13,
+    "title": "гербарий 2",
+    "duration": "2:37"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 27,
+  "fields": {
+    "album": 4,
+    "number": 14,
+    "title": "прощай",
+    "duration": "3:03"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 28,
+  "fields": {
+    "album": 5,
+    "number": 1,
+    "title": "интро",
+    "duration": "0:53"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 29,
+  "fields": {
+    "album": 5,
+    "number": 2,
+    "title": "додик",
+    "duration": "3:00"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 30,
+  "fields": {
+    "album": 5,
+    "number": 3,
+    "title": "sad boys club",
+    "duration": "2:21"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 31,
+  "fields": {
+    "album": 5,
+    "number": 4,
+    "title": "€ хочу",
+    "duration": "2:36"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 32,
+  "fields": {
+    "album": 5,
+    "number": 5,
+    "title": "5 минут",
+    "duration": "2:34"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 33,
+  "fields": {
+    "album": 5,
+    "number": 6,
+    "title": "лин лин лин",
+    "duration": "1:54"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 34,
+  "fields": {
+    "album": 5,
+    "number": 7,
+    "title": "солева€ стейси",
+    "duration": "2:39"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 35,
+  "fields": {
+    "album": 6,
+    "number": 1,
+    "title": "палмер",
+    "duration": "4:12"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 36,
+  "fields": {
+    "album": 6,
+    "number": 2,
+    "title": "реп",
+    "duration": "2:53"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 37,
+  "fields": {
+    "album": 6,
+    "number": 3,
+    "title": "факбой 2",
+    "duration": "1:31"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 38,
+  "fields": {
+    "album": 6,
+    "number": 4,
+    "title": "выходной",
+    "duration": "3:18"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 39,
+  "fields": {
+    "album": 6,
+    "number": 5,
+    "title": "на пати",
+    "duration": "2:24"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 40,
+  "fields": {
+    "album": 6,
+    "number": 6,
+    "title": "капитал",
+    "duration": "2:20"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 41,
+  "fields": {
+    "album": 6,
+    "number": 7,
+    "title": "однажды",
+    "duration": "3:47"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 42,
+  "fields": {
+    "album": 6,
+    "number": 8,
+    "title": "фрагменты",
+    "duration": "5:18"
+  }
+},
+{
+  "model": "music.track",
+  "pk": 43,
+  "fields": {
+    "album": 6,
+    "number": 9,
+    "title": "факбой 2 2",
+    "duration": "1:31"
+  }
+},
+{
+  "model": "music.single",
+  "pk": 1,
+  "fields": {
+    "title": "fomo",
+    "release_year": 2026,
+    "url": "https://band.link/7Rbfo",
+    "order": 1
+  }
+},
+{
+  "model": "music.single",
+  "pk": 2,
+  "fields": {
+    "title": "hangover (x__x)",
+    "release_year": 2026,
+    "url": "https://band.link/MbY0T",
+    "order": 2
+  }
+},
+{
+  "model": "music.single",
+  "pk": 3,
+  "fields": {
+    "title": "2023 ^_^",
+    "release_year": 2026,
+    "url": "https://band.link/Br6Pn",
+    "order": 3
+  }
+},
+{
+  "model": "music.single",
+  "pk": 4,
+  "fields": {
+    "title": "расскажи ^_^",
+    "release_year": 2026,
+    "url": "https://band.link/JlbFN",
+    "order": 4
+  }
+},
+{
+  "model": "music.single",
+  "pk": 5,
+  "fields": {
+    "title": "баллада об оппчике",
+    "release_year": 2025,
+    "url": "https://band.link/Wt2jo",
+    "order": 5
+  }
+},
+{
+  "model": "music.single",
+  "pk": 6,
+  "fields": {
+    "title": "mlg moment",
+    "release_year": 2025,
+    "url": "http://band.link/M0boQ",
+    "order": 6
+  }
+},
+{
+  "model": "music.single",
+  "pk": 7,
+  "fields": {
+    "title": "егор привет",
+    "release_year": 2025,
+    "url": "http://band.link/tnhxr",
+    "order": 7
+  }
+},
+{
+  "model": "music.single",
+  "pk": 8,
+  "fields": {
+    "title": "не умею...",
+    "release_year": 2024,
+    "url": "http://band.link/a3Sxj",
+    "order": 8
+  }
+},
+{
+  "model": "music.single",
+  "pk": 9,
+  "fields": {
+    "title": "ты ты ты",
+    "release_year": 2024,
+    "url": "http://band.link/u75BH",
+    "order": 9
+  }
+},
+{
+  "model": "music.single",
+  "pk": 10,
+  "fields": {
+    "title": "параной€!",
+    "release_year": 2023,
+    "url": "http://band.link/ojM4U",
+    "order": 10
+  }
+},
+{
+  "model": "music.single",
+  "pk": 11,
+  "fields": {
+    "title": "качели",
+    "release_year": 2023,
+    "url": "http://band.link/c50ph",
+    "order": 11
+  }
+},
+{
+  "model": "music.single",
+  "pk": 12,
+  "fields": {
+    "title": "3",
+    "release_year": 2023,
+    "url": "http://band.link/RJ5me",
+    "order": 12
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 1,
+  "fields": {
+    "album": 1,
+    "name": "deezer",
+    "url": "https://www.deezer.com/album/933822991",
+    "order": 3
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 2,
+  "fields": {
+    "album": 1,
+    "name": "€ндекс музыка",
+    "url": "https://music.yandex.ru/album/40997574",
+    "order": 2
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 3,
+  "fields": {
+    "album": 2,
+    "name": "deezer",
+    "url": "https://www.deezer.com/album/914001651",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 4,
+  "fields": {
+    "album": 3,
+    "name": "deezer",
+    "url": "https://www.deezer.com/album/913701631",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 5,
+  "fields": {
+    "album": 4,
+    "name": "deezer",
+    "url": "https://www.deezer.com/album/445286015",
+    "order": 2
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 6,
+  "fields": {
+    "album": 4,
+    "name": "€ндекс музыка",
+    "url": "https://music.yandex.ru/album/25892540",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 7,
+  "fields": {
+    "album": 5,
+    "name": "deezer",
+    "url": "https://www.deezer.com/album/785964341",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 8,
+  "fields": {
+    "album": 5,
+    "name": "€ндекс музыка",
+    "url": "https://music.yandex.ru/album/23248551",
+    "order": 2
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 9,
+  "fields": {
+    "album": 1,
+    "name": "spotify",
+    "url": "https://open.spotify.com/album/0zutpO7HnVSoLRuI99n4dr",
+    "order": 0
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 10,
+  "fields": {
+    "album": 1,
+    "name": "youtube",
+    "url": "https://www.youtube.com/playlist?list=OLAK5uy_nheB7fu4n2k9CM6mUZ-L4_fArXGNvWd8k",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 11,
+  "fields": {
+    "album": 2,
+    "name": "spotify",
+    "url": "https://open.spotify.com/album/2iuWnWurIS3TZJametI9cR",
+    "order": 0
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 12,
+  "fields": {
+    "album": 3,
+    "name": "spotify",
+    "url": "https://open.spotify.com/album/6e5cf1xllf4mgVfjIcNzNN",
+    "order": 0
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 13,
+  "fields": {
+    "album": 4,
+    "name": "youtube",
+    "url": "https://www.youtube.com/playlist?list=OLAK5uy_lmwU3aEAYxbSM7PvU2DLQeHP4WkqYedF0",
+    "order": 0
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 14,
+  "fields": {
+    "album": 5,
+    "name": "youtube",
+    "url": "https://www.youtube.com/playlist?list=OLAK5uy_mx3Uze6F1m4gjAi4HOVAnVmXkT5mLXc9w",
+    "order": 0
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 15,
+  "fields": {
+    "album": 6,
+    "name": "spotify",
+    "url": "https://open.spotify.com/album/6wfuN6AisTMFs0A8jnpruF?si=J_3JodW5Se-bgl1V6ui-1g",
+    "order": 2
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 16,
+  "fields": {
+    "album": 6,
+    "name": "€ндекс музыка",
+    "url": "https://music.yandex.ru/album/42914910?utm_source=web&utm_medium=copy_link",
+    "order": 1
+  }
+},
+{
+  "model": "music.albumlink",
+  "pk": 17,
+  "fields": {
+    "album": 6,
+    "name": "youtube",
+    "url": "https://www.youtube.com/playlist?list=OLAK5uy_my_R4vKK4NVa4GTJnxGiVyLXKdrgv3Ij4",
+    "order": 0
+  }
+},
+{
+  "model": "music.sociallink",
+  "pk": 1,
+  "fields": {
+    "name": "telegram",
+    "url": "https://t.me/honeysuckler",
+    "order": 0
+  }
+},
+{
+  "model": "music.sociallink",
+  "pk": 2,
+  "fields": {
+    "name": "youtube",
+    "url": "https://www.youtube.com/@spaghetti_crew",
+    "order": 0
+  }
+},
+{
+  "model": "music.sociallink",
+  "pk": 3,
+  "fields": {
+    "name": "github",
+    "url": "https://github.com/EgorMishalkin",
+    "order": 0
+  }
+},
+{
+  "model": "music.sociallink",
+  "pk": 4,
+  "fields": {
+    "name": "rickroll",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "order": 0
+  }
+},
+{
+  "model": "music.sitesettings",
+  "pk": 1,
+  "fields": {
+    "artist_photo": ""
+  }
+},
+{
+  "model": "music.materiallink",
+  "pk": 1,
+  "fields": {
+    "album": 4,
+    "single": null,
+    "title": "дратьс€ клип",
+    "url": "https://www.youtube.com/watch?v=r4vqsFYn5cs",
+    "order": 0
+  }
+},
+{
+  "model": "music.materiallink",
+  "pk": 2,
+  "fields": {
+    "album": 4,
+    "single": null,
+    "title": "о свободе клип",
+    "url": "https://www.youtube.com/watch?v=k1aSJ4qPfYA",
+    "order": 1
+  }
+},
+{
+  "model": "music.materiallink",
+  "pk": 3,
+  "fields": {
+    "album": 2,
+    "single": null,
+    "title": "хонибургер клип",
+    "url": "https://www.youtube.com/watch?v=bFOHe5Ys-J8",
+    "order": 0
+  }
+},
+{
+  "model": "music.materiallink",
+  "pk": 4,
+  "fields": {
+    "album": null,
+    "single": 11,
+    "title": "качели клип",
+    "url": "https://www.youtube.com/watch?v=b_O6-V1r_uc",
+    "order": 0
+  }
+}
+]
