@@ -327,6 +327,32 @@ a {
     display: block;
 }
 
+.single-item {
+    margin-bottom: 9px;
+}
+
+.single-item .single {
+    margin-bottom: 0;
+}
+
+.single-materials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 7px;
+}
+
+.single-materials a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.single-materials a:hover {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 900px) {
     .page {
         padding: 24px 20px 40px;
@@ -429,4 +455,47 @@ a {
     .contact-row {
         flex-direction: column;
     }
+}
+
+.material-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 28px;
+}
+
+.material-links a,
+.single-material {
+    margin-bottom: 7px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.material-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 18px;
+}
+
+.material-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.material-links a:hover {
+    text-decoration: underline;
+}
+
+.single-material {
+    display: block;
+    width: fit-content;
+    margin-top: 7px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.single-material:hover {
+    text-decoration: underline;
 }

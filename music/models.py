@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.exceptions import ValidationError
 
 class Album(models.Model):
     class ReleaseType(models.TextChoices):
@@ -128,3 +128,38 @@ class SiteSettings(models.Model):
 
     def __str__(self):
         return "Настройки сайта"
+
+
+class MaterialLink(models.Model):
+    album = models.ForeignKey(
+        Album,
+        on_delete=models.CASCADE,
+        related_name="materials",
+        blank=True,
+        null=True,
+    )
+
+    single = models.ForeignKey(
+        Single,
+        on_delete=models.CASCADE,
+        related_name="materials",
+        blank=True,
+        null=True,
+    )
+
+    title = models.CharField(max_length=150)
+    url = models.URLField()
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def clean(self):
+        if bool(self.album) == bool(self.single):
+            raise ValidationError(
+                "Материал должен относиться либо к альбому, либо к синглу."
+            )
+
+    def __str__(self):
+        release = self.album or self.single
+        return f"{release} — {self.title}"

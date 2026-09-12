@@ -91,6 +91,16 @@
                     </div>
                 {% endfor %}
 
+                {% if selected_album.materials.all %}
+                    <div class="material-links">
+                        {% for material in selected_album.materials.all %}
+                            <a href="{{ material.url }}" target="_blank" rel="noopener noreferrer">
+                                {{ material.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+{% endif %}
+
             </div>
 
         {% endif %}
@@ -99,16 +109,16 @@
 
 
     <section class="singles">
-    <h2>{% translate "cинглы" %}</h2>
+    <h2>{% translate "синглы" %}</h2>
 
-        {% for single in singles %}
+    {% for single in singles %}
+        <div class="single-item">
+
             <div class="single">
                 {% if single.url %}
-                    <a
-                        href="{{ single.url }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href="{{ single.url }}"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         {{ single.title }}
                     </a>
                 {% else %}
@@ -117,8 +127,22 @@
 
                 <span>{{ single.release_year }}</span>
             </div>
-        {% endfor %}
-    </section>
+
+            {% if single.materials.all %}
+                <div class="single-materials">
+                    {% for material in single.materials.all %}
+                        <a href="{{ material.url }}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            {{ material.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+                </div>
+            {% endfor %}
+        </section>
 
 
     <section class="bottom">

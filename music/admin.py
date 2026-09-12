@@ -4,6 +4,7 @@ from .models import (
     Album,
     AlbumLink,
     ContactMessage,
+    MaterialLink,
     Single,
     SiteSettings,
     SocialLink,
@@ -21,6 +22,20 @@ class AlbumLinkInline(admin.TabularInline):
     extra = 0
 
 
+class AlbumMaterialInline(admin.TabularInline):
+    model = MaterialLink
+    fk_name = "album"
+    extra = 0
+    exclude = ("single",)
+
+
+class SingleMaterialInline(admin.TabularInline):
+    model = MaterialLink
+    fk_name = "single"
+    extra = 0
+    exclude = ("album",)
+
+
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
     list_display = (
@@ -31,9 +46,11 @@ class AlbumAdmin(admin.ModelAdmin):
     )
     list_editable = ("order",)
     prepopulated_fields = {"slug": ("title",)}
+
     inlines = [
         TrackInline,
         AlbumLinkInline,
+        AlbumMaterialInline,
     ]
 
 
@@ -57,6 +74,10 @@ class SingleAdmin(admin.ModelAdmin):
         "order",
     )
     list_editable = ("order",)
+
+    inlines = [
+        SingleMaterialInline,
+    ]
 
 
 @admin.register(SocialLink)

@@ -5,8 +5,13 @@ from .forms import ContactMessageForm
 from .models import Album, Single, SiteSettings, SocialLink
 
 def home(request):
-    albums = Album.objects.prefetch_related("tracks", "links").order_by("order")
-    singles = Single.objects.all()
+    albums = Album.objects.prefetch_related(
+        "tracks",
+        "links",
+        "materials",
+    ).order_by("order")
+
+    singles = Single.objects.prefetch_related("materials").all()
     social_links = SocialLink.objects.all()
     site_settings = SiteSettings.objects.first()
     selected_slug = request.GET.get("album")
