@@ -3,7 +3,7 @@
   "model": "music.album",
   "pk": 1,
   "fields": {
-    "title": "РЅРёС€С‚СЏРє РјСѓР·С‹РєР°",
+    "title": "ништяк музыка",
     "slug": "nishtyak-muzyka",
     "release_year": 2026,
     "release_type": "ep",
@@ -17,7 +17,7 @@
   "model": "music.album",
   "pk": 2,
   "fields": {
-    "title": "РЅРёС€С‚СЏРє РјСѓР·РёРє",
+    "title": "ништяк музик",
     "slug": "nishtyak-muzik",
     "release_year": 2025,
     "release_type": "ep",
@@ -37,7 +37,7 @@
     "release_type": "ep",
     "accent_color": "#2457FF",
     "order": 3,
-    "cover": "covers/neo_emo_by_С…РѕРЅРёСЃР°РєР»РµСЂ.jpg",
+    "cover": "covers/neo_emo_by_хонисаклер.jpg",
     "upc": "4741534574716"
   }
 },
@@ -45,7 +45,7 @@
   "model": "music.album",
   "pk": 4,
   "fields": {
-    "title": "СЃР»Р°Р±С‹Р№ РїРµСЂСЃРѕРЅР°Р¶",
+    "title": "слабый персонаж",
     "slug": "slabyy-personazh",
     "release_year": 2023,
     "release_type": "album",
@@ -73,7 +73,7 @@
   "model": "music.album",
   "pk": 6,
   "fields": {
-    "title": "РїРёС‚РµСЂСЃРєРёР№ Р°Р»СЊР±РѕРј",
+    "title": "питерский альбом",
     "slug": "piterskij-albom",
     "release_year": 2026,
     "release_type": "album",
@@ -89,8 +89,9 @@
   "fields": {
     "album": 1,
     "number": 1,
-    "title": "РґСѓСЂР°Р»РµРё",
-    "duration": "2:15"
+    "title": "дуралеи",
+    "duration": "2:15",
+    "audio": "audio/albums/nishtyak-muzyka/01.mp3"
   }
 },
 {
@@ -99,8 +100,9 @@
   "fields": {
     "album": 1,
     "number": 2,
-    "title": "РЅРёС€С‚СЏРє РјСѓР·С‹РєР°",
-    "duration": "1:56"
+    "title": "ништяк музыка",
+    "duration": "1:56",
+    "audio": "audio/albums/nishtyak-muzyka/02.mp3"
   }
 },
 {
@@ -109,8 +111,9 @@
   "fields": {
     "album": 1,
     "number": 3,
-    "title": "С…РѕРЅРёР±СѓСЂРіРµСЂ 2",
-    "duration": "2:19"
+    "title": "хонибургер 2",
+    "duration": "2:19",
+    "audio": "audio/albums/nishtyak-muzyka/03.mp3"
   }
 },
 {
@@ -119,8 +122,9 @@
   "fields": {
     "album": 1,
     "number": 4,
-    "title": "РґРµС‚РєР° 0_0",
-    "duration": "2:03"
+    "title": "детка 0_0",
+    "duration": "2:03",
+    "audio": "audio/albums/nishtyak-muzyka/04.mp3"
   }
 },
 {
@@ -129,8 +133,9 @@
   "fields": {
     "album": 2,
     "number": 1,
-    "title": "С€РјРѕСѓРє",
-    "duration": "2:20"
+    "title": "шмоук",
+    "duration": "2:20",
+    "audio": "audio/albums/nishtyak-muzik/01.mp3"
   }
 },
 {
@@ -139,8 +144,9 @@
   "fields": {
     "album": 2,
     "number": 2,
-    "title": "РЅРёС€С‚СЏРє music",
-    "duration": "1:57"
+    "title": "ништяк music",
+    "duration": "1:57",
+    "audio": "audio/albums/nishtyak-muzik/02.mp3"
   }
 },
 {
@@ -149,8 +155,9 @@
   "fields": {
     "album": 2,
     "number": 3,
-    "title": "С…РѕРЅРёР±СѓСЂРіРµСЂ",
-    "duration": "2:19"
+    "title": "хонибургер",
+    "duration": "2:19",
+    "audio": "audio/albums/nishtyak-muzik/03.mp3"
   }
 },
 {
@@ -159,8 +166,9 @@
   "fields": {
     "album": 2,
     "number": 4,
-    "title": "Р±РµР№Р±Рё ^_^",
-    "duration": "2:01"
+    "title": "бейби ^_^",
+    "duration": "2:01",
+    "audio": "audio/albums/nishtyak-muzik/04.mp3"
   }
 },
 {
@@ -169,8 +177,9 @@
   "fields": {
     "album": 3,
     "number": 1,
-    "title": "РїРµСЂРµР¶РёС‚СЊ",
-    "duration": "2:10"
+    "title": "пережить",
+    "duration": "2:10",
+    "audio": "audio/albums/neo-emo/01.mp3"
   }
 },
 {
@@ -179,8 +188,9 @@
   "fields": {
     "album": 3,
     "number": 2,
-    "title": "Р±РµР·РґР°СЂРЅРѕСЃС‚СЊ",
-    "duration": "2:01"
+    "title": "бездарность",
+    "duration": "2:01",
+    "audio": "audio/albums/neo-emo/02.mp3"
   }
 },
 {
@@ -190,7 +200,8 @@
     "album": 3,
     "number": 3,
     "title": "boyfriend XD",
-    "duration": "4:20"
+    "duration": "4:20",
+    "audio": "audio/albums/neo-emo/03.mp3"
   }
 },
 {
@@ -199,8 +210,9 @@
   "fields": {
     "album": 3,
     "number": 4,
-    "title": "СЃРєРѕР»СЊРєРѕ?",
-    "duration": "2:27"
+    "title": "сколько?",
+    "duration": "2:27",
+    "audio": "audio/albums/neo-emo/04.mp3"
   }
 },
 {
@@ -209,8 +221,9 @@
   "fields": {
     "album": 3,
     "number": 5,
-    "title": "РІРµСЂР°",
-    "duration": "2:27"
+    "title": "вера",
+    "duration": "2:27",
+    "audio": "audio/albums/neo-emo/05.mp3"
   }
 },
 {
@@ -219,8 +232,9 @@
   "fields": {
     "album": 4,
     "number": 1,
-    "title": "РѕРїРµРЅРёРЅРі",
-    "duration": "2:17"
+    "title": "опенинг",
+    "duration": "2:17",
+    "audio": "audio/albums/slabyy-personazh/01.mp3"
   }
 },
 {
@@ -229,8 +243,9 @@
   "fields": {
     "album": 4,
     "number": 2,
-    "title": "РґСЂР°С‚СЊСЃСЏ!",
-    "duration": "2:05"
+    "title": "драться!",
+    "duration": "2:05",
+    "audio": "audio/albums/slabyy-personazh/02.mp3"
   }
 },
 {
@@ -239,8 +254,9 @@
   "fields": {
     "album": 4,
     "number": 3,
-    "title": "Р±РѕСЏС‚СЊСЃСЏ",
-    "duration": "2:17"
+    "title": "бояться",
+    "duration": "2:17",
+    "audio": "audio/albums/slabyy-personazh/03.mp3"
   }
 },
 {
@@ -249,8 +265,9 @@
   "fields": {
     "album": 4,
     "number": 4,
-    "title": "СЃР»Р°Р±С‹Р№ РїРµСЂСЃРѕРЅР°Р¶",
-    "duration": "3:00"
+    "title": "слабый персонаж",
+    "duration": "3:00",
+    "audio": "audio/albums/slabyy-personazh/04.mp3"
   }
 },
 {
@@ -259,8 +276,9 @@
   "fields": {
     "album": 4,
     "number": 5,
-    "title": "Р±РёС‡ РїР°РєРµС‚",
-    "duration": "2:58"
+    "title": "бич пакет",
+    "duration": "2:58",
+    "audio": "audio/albums/slabyy-personazh/05.mp3"
   }
 },
 {
@@ -269,8 +287,9 @@
   "fields": {
     "album": 4,
     "number": 6,
-    "title": "РјРѕР»РѕРґС‹Рј Рё Р·Р»С‹Рј",
-    "duration": "2:18"
+    "title": "молодым и злым",
+    "duration": "2:18",
+    "audio": "audio/albums/slabyy-personazh/06.mp3"
   }
 },
 {
@@ -279,8 +298,9 @@
   "fields": {
     "album": 4,
     "number": 7,
-    "title": "Рѕ СЃРІРѕР±РѕРґРµ",
-    "duration": "2:03"
+    "title": "о свободе",
+    "duration": "2:03",
+    "audio": "audio/albums/slabyy-personazh/07.mp3"
   }
 },
 {
@@ -289,8 +309,9 @@
   "fields": {
     "album": 4,
     "number": 8,
-    "title": "РїР°Р·Р»Р°",
-    "duration": "2:47"
+    "title": "пазла",
+    "duration": "2:47",
+    "audio": "audio/albums/slabyy-personazh/08.mp3"
   }
 },
 {
@@ -299,8 +320,9 @@
   "fields": {
     "album": 4,
     "number": 9,
-    "title": "С‚СЂСѓРґРЅРѕСЃС‚Рё",
-    "duration": "2:50"
+    "title": "трудности",
+    "duration": "2:50",
+    "audio": "audio/albums/slabyy-personazh/09.mp3"
   }
 },
 {
@@ -309,8 +331,9 @@
   "fields": {
     "album": 4,
     "number": 10,
-    "title": "РІРѕСЂРѕРЅРєР°",
-    "duration": "2:59"
+    "title": "воронка",
+    "duration": "2:59",
+    "audio": "audio/albums/slabyy-personazh/10.mp3"
   }
 },
 {
@@ -319,8 +342,9 @@
   "fields": {
     "album": 4,
     "number": 11,
-    "title": "СЏ РЅРµ Р·РЅР°СЋ",
-    "duration": "2:10"
+    "title": "я не знаю",
+    "duration": "2:10",
+    "audio": "audio/albums/slabyy-personazh/11.mp3"
   }
 },
 {
@@ -329,8 +353,9 @@
   "fields": {
     "album": 4,
     "number": 12,
-    "title": "РёСЃРєСЂС‹",
-    "duration": "3:12"
+    "title": "искры",
+    "duration": "3:12",
+    "audio": "audio/albums/slabyy-personazh/12.mp3"
   }
 },
 {
@@ -339,8 +364,9 @@
   "fields": {
     "album": 4,
     "number": 13,
-    "title": "РіРµСЂР±Р°СЂРёР№ 2",
-    "duration": "2:37"
+    "title": "гербарий 2",
+    "duration": "2:37",
+    "audio": "audio/albums/slabyy-personazh/13.mp3"
   }
 },
 {
@@ -349,8 +375,9 @@
   "fields": {
     "album": 4,
     "number": 14,
-    "title": "РїСЂРѕС‰Р°Р№",
-    "duration": "3:03"
+    "title": "прощай",
+    "duration": "3:03",
+    "audio": "audio/albums/slabyy-personazh/14.mp3"
   }
 },
 {
@@ -359,8 +386,9 @@
   "fields": {
     "album": 5,
     "number": 1,
-    "title": "РёРЅС‚СЂРѕ",
-    "duration": "0:53"
+    "title": "интро",
+    "duration": "0:53",
+    "audio": "audio/albums/sad-boys-club/01.mp3"
   }
 },
 {
@@ -369,8 +397,9 @@
   "fields": {
     "album": 5,
     "number": 2,
-    "title": "РґРѕРґРёРє",
-    "duration": "3:00"
+    "title": "додик",
+    "duration": "3:00",
+    "audio": "audio/albums/sad-boys-club/02.mp3"
   }
 },
 {
@@ -380,7 +409,8 @@
     "album": 5,
     "number": 3,
     "title": "sad boys club",
-    "duration": "2:21"
+    "duration": "2:21",
+    "audio": "audio/albums/sad-boys-club/03.mp3"
   }
 },
 {
@@ -389,8 +419,9 @@
   "fields": {
     "album": 5,
     "number": 4,
-    "title": "СЏ С…РѕС‡Сѓ",
-    "duration": "2:36"
+    "title": "я хочу",
+    "duration": "2:36",
+    "audio": "audio/albums/sad-boys-club/04.mp3"
   }
 },
 {
@@ -399,8 +430,9 @@
   "fields": {
     "album": 5,
     "number": 5,
-    "title": "5 РјРёРЅСѓС‚",
-    "duration": "2:34"
+    "title": "5 минут",
+    "duration": "2:34",
+    "audio": "audio/albums/sad-boys-club/05.mp3"
   }
 },
 {
@@ -409,8 +441,9 @@
   "fields": {
     "album": 5,
     "number": 6,
-    "title": "Р»РёРЅ Р»РёРЅ Р»РёРЅ",
-    "duration": "1:54"
+    "title": "лин лин лин",
+    "duration": "1:54",
+    "audio": "audio/albums/sad-boys-club/06.mp3"
   }
 },
 {
@@ -419,8 +452,9 @@
   "fields": {
     "album": 5,
     "number": 7,
-    "title": "СЃРѕР»РµРІР°СЏ СЃС‚РµР№СЃРё",
-    "duration": "2:39"
+    "title": "солевая стейси",
+    "duration": "2:39",
+    "audio": "audio/albums/sad-boys-club/07.mp3"
   }
 },
 {
@@ -429,8 +463,9 @@
   "fields": {
     "album": 6,
     "number": 1,
-    "title": "РїР°Р»РјРµСЂ",
-    "duration": "4:12"
+    "title": "палмер",
+    "duration": "4:12",
+    "audio": "audio/albums/piterskij-albom/01.mp3"
   }
 },
 {
@@ -439,8 +474,9 @@
   "fields": {
     "album": 6,
     "number": 2,
-    "title": "СЂРµРї",
-    "duration": "2:53"
+    "title": "реп",
+    "duration": "2:53",
+    "audio": "audio/albums/piterskij-albom/02.mp3"
   }
 },
 {
@@ -449,8 +485,9 @@
   "fields": {
     "album": 6,
     "number": 3,
-    "title": "С„Р°РєР±РѕР№ 2",
-    "duration": "1:31"
+    "title": "факбой 2",
+    "duration": "1:31",
+    "audio": "audio/albums/piterskij-albom/03.mp3"
   }
 },
 {
@@ -459,8 +496,9 @@
   "fields": {
     "album": 6,
     "number": 4,
-    "title": "РІС‹С…РѕРґРЅРѕР№",
-    "duration": "3:18"
+    "title": "выходной",
+    "duration": "3:18",
+    "audio": "audio/albums/piterskij-albom/04.mp3"
   }
 },
 {
@@ -469,8 +507,9 @@
   "fields": {
     "album": 6,
     "number": 5,
-    "title": "РЅР° РїР°С‚Рё",
-    "duration": "2:24"
+    "title": "на пати",
+    "duration": "2:24",
+    "audio": "audio/albums/piterskij-albom/05.mp3"
   }
 },
 {
@@ -479,8 +518,9 @@
   "fields": {
     "album": 6,
     "number": 6,
-    "title": "РєР°РїРёС‚Р°Р»",
-    "duration": "2:20"
+    "title": "капитал",
+    "duration": "2:20",
+    "audio": "audio/albums/piterskij-albom/06.mp3"
   }
 },
 {
@@ -489,8 +529,9 @@
   "fields": {
     "album": 6,
     "number": 7,
-    "title": "РѕРґРЅР°Р¶РґС‹",
-    "duration": "3:47"
+    "title": "однажды",
+    "duration": "3:47",
+    "audio": "audio/albums/piterskij-albom/07.mp3"
   }
 },
 {
@@ -499,8 +540,9 @@
   "fields": {
     "album": 6,
     "number": 8,
-    "title": "С„СЂР°РіРјРµРЅС‚С‹",
-    "duration": "5:18"
+    "title": "фрагменты",
+    "duration": "5:18",
+    "audio": "audio/albums/piterskij-albom/08.mp3"
   }
 },
 {
@@ -509,8 +551,9 @@
   "fields": {
     "album": 6,
     "number": 9,
-    "title": "С„Р°РєР±РѕР№ 2 2",
-    "duration": "1:31"
+    "title": "факбой 2 2",
+    "duration": "1:31",
+    "audio": "audio/albums/piterskij-albom/09.mp3"
   }
 },
 {
@@ -547,7 +590,7 @@
   "model": "music.single",
   "pk": 4,
   "fields": {
-    "title": "СЂР°СЃСЃРєР°Р¶Рё ^_^",
+    "title": "расскажи ^_^",
     "release_year": 2026,
     "url": "https://band.link/JlbFN",
     "order": 4
@@ -557,7 +600,7 @@
   "model": "music.single",
   "pk": 5,
   "fields": {
-    "title": "Р±Р°Р»Р»Р°РґР° РѕР± РѕРїРїС‡РёРєРµ",
+    "title": "баллада об оппчике",
     "release_year": 2025,
     "url": "https://band.link/Wt2jo",
     "order": 5
@@ -577,7 +620,7 @@
   "model": "music.single",
   "pk": 7,
   "fields": {
-    "title": "РµРіРѕСЂ РїСЂРёРІРµС‚",
+    "title": "егор привет",
     "release_year": 2025,
     "url": "http://band.link/tnhxr",
     "order": 7
@@ -587,7 +630,7 @@
   "model": "music.single",
   "pk": 8,
   "fields": {
-    "title": "РЅРµ СѓРјРµСЋ...",
+    "title": "не умею...",
     "release_year": 2024,
     "url": "http://band.link/a3Sxj",
     "order": 8
@@ -597,7 +640,7 @@
   "model": "music.single",
   "pk": 9,
   "fields": {
-    "title": "С‚С‹ С‚С‹ С‚С‹",
+    "title": "ты ты ты",
     "release_year": 2024,
     "url": "http://band.link/u75BH",
     "order": 9
@@ -607,7 +650,7 @@
   "model": "music.single",
   "pk": 10,
   "fields": {
-    "title": "РїР°СЂР°РЅРѕР№СЏ!",
+    "title": "паранойя!",
     "release_year": 2023,
     "url": "http://band.link/ojM4U",
     "order": 10
@@ -617,7 +660,7 @@
   "model": "music.single",
   "pk": 11,
   "fields": {
-    "title": "РєР°С‡РµР»Рё",
+    "title": "качели",
     "release_year": 2023,
     "url": "http://band.link/c50ph",
     "order": 11
@@ -631,6 +674,235 @@
     "release_year": 2023,
     "url": "http://band.link/RJ5me",
     "order": 12
+  }
+},
+{
+  "model": "music.single",
+  "pk": 13,
+  "fields": {
+    "title": "циклы",
+    "release_year": 2026,
+    "url": "https://band.link/oAaMZ",
+    "order": 0
+  }
+},
+{
+  "model": "music.single",
+  "pk": 14,
+  "fields": {
+    "title": "интересно",
+    "release_year": 2026,
+    "url": "https://band.link/rYmQt",
+    "order": 1
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 1,
+  "fields": {
+    "single": 13,
+    "number": 1,
+    "title": "циклы",
+    "duration": "",
+    "audio": "audio/singles/13/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 2,
+  "fields": {
+    "single": 14,
+    "number": 1,
+    "title": "интересно",
+    "duration": "",
+    "audio": "audio/singles/14/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 3,
+  "fields": {
+    "single": 1,
+    "number": 1,
+    "title": "fomo",
+    "duration": "",
+    "audio": "audio/singles/1/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 4,
+  "fields": {
+    "single": 2,
+    "number": 1,
+    "title": "hangover (x__x)",
+    "duration": "",
+    "audio": "audio/singles/2/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 5,
+  "fields": {
+    "single": 3,
+    "number": 1,
+    "title": "2023 ^_^",
+    "duration": "",
+    "audio": "audio/singles/3/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 6,
+  "fields": {
+    "single": 4,
+    "number": 1,
+    "title": "расскажи ^_^",
+    "duration": "",
+    "audio": "audio/singles/4/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 7,
+  "fields": {
+    "single": 5,
+    "number": 1,
+    "title": "баллада об оппчике",
+    "duration": "",
+    "audio": "audio/singles/5/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 8,
+  "fields": {
+    "single": 5,
+    "number": 2,
+    "title": "19",
+    "duration": "",
+    "audio": "audio/singles/5/02.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 9,
+  "fields": {
+    "single": 5,
+    "number": 3,
+    "title": "фиолетовая фанта ^_^",
+    "duration": "",
+    "audio": "audio/singles/5/03.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 10,
+  "fields": {
+    "single": 6,
+    "number": 1,
+    "title": "плавит",
+    "duration": "",
+    "audio": "audio/singles/6/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 11,
+  "fields": {
+    "single": 6,
+    "number": 2,
+    "title": "nyan cat",
+    "duration": "",
+    "audio": "audio/singles/6/02.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 12,
+  "fields": {
+    "single": 7,
+    "number": 1,
+    "title": "егор привет",
+    "duration": "",
+    "audio": "audio/singles/7/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 13,
+  "fields": {
+    "single": 7,
+    "number": 2,
+    "title": "бит егор привет чет завайбил меня ЖОСКА",
+    "duration": "",
+    "audio": "audio/singles/7/02.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 14,
+  "fields": {
+    "single": 8,
+    "number": 1,
+    "title": "не умею...",
+    "duration": "",
+    "audio": "audio/singles/8/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 15,
+  "fields": {
+    "single": 9,
+    "number": 1,
+    "title": "ты ты ты",
+    "duration": "",
+    "audio": "audio/singles/9/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 16,
+  "fields": {
+    "single": 10,
+    "number": 1,
+    "title": "паранойя!",
+    "duration": "",
+    "audio": "audio/singles/10/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 17,
+  "fields": {
+    "single": 11,
+    "number": 1,
+    "title": "качели",
+    "duration": "",
+    "audio": "audio/singles/11/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 18,
+  "fields": {
+    "single": 12,
+    "number": 1,
+    "title": "из китая",
+    "duration": "",
+    "audio": "audio/singles/12/01.mp3"
+  }
+},
+{
+  "model": "music.singletrack",
+  "pk": 19,
+  "fields": {
+    "single": 12,
+    "number": 2,
+    "title": "gang!",
+    "duration": "",
+    "audio": "audio/singles/12/02.mp3"
   }
 },
 {
@@ -648,7 +920,7 @@
   "pk": 2,
   "fields": {
     "album": 1,
-    "name": "СЏРЅРґРµРєСЃ РјСѓР·С‹РєР°",
+    "name": "яндекс музыка",
     "url": "https://music.yandex.ru/album/40997574",
     "order": 2
   }
@@ -688,7 +960,7 @@
   "pk": 6,
   "fields": {
     "album": 4,
-    "name": "СЏРЅРґРµРєСЃ РјСѓР·С‹РєР°",
+    "name": "яндекс музыка",
     "url": "https://music.yandex.ru/album/25892540",
     "order": 1
   }
@@ -708,7 +980,7 @@
   "pk": 8,
   "fields": {
     "album": 5,
-    "name": "СЏРЅРґРµРєСЃ РјСѓР·С‹РєР°",
+    "name": "яндекс музыка",
     "url": "https://music.yandex.ru/album/23248551",
     "order": 2
   }
@@ -788,7 +1060,7 @@
   "pk": 16,
   "fields": {
     "album": 6,
-    "name": "СЏРЅРґРµРєСЃ РјСѓР·С‹РєР°",
+    "name": "яндекс музыка",
     "url": "https://music.yandex.ru/album/42914910?utm_source=web&utm_medium=copy_link",
     "order": 1
   }
@@ -852,7 +1124,7 @@
   "fields": {
     "album": 4,
     "single": null,
-    "title": "РґСЂР°С‚СЊСЃСЏ РєР»РёРї",
+    "title": "драться клип",
     "url": "https://www.youtube.com/watch?v=r4vqsFYn5cs",
     "order": 0
   }
@@ -863,7 +1135,7 @@
   "fields": {
     "album": 4,
     "single": null,
-    "title": "Рѕ СЃРІРѕР±РѕРґРµ РєР»РёРї",
+    "title": "о свободе клип",
     "url": "https://www.youtube.com/watch?v=k1aSJ4qPfYA",
     "order": 1
   }
@@ -874,7 +1146,7 @@
   "fields": {
     "album": 2,
     "single": null,
-    "title": "С…РѕРЅРёР±СѓСЂРіРµСЂ РєР»РёРї",
+    "title": "хонибургер клип",
     "url": "https://www.youtube.com/watch?v=bFOHe5Ys-J8",
     "order": 0
   }
@@ -885,7 +1157,7 @@
   "fields": {
     "album": null,
     "single": 11,
-    "title": "РєР°С‡РµР»Рё РєР»РёРї",
+    "title": "качели клип",
     "url": "https://www.youtube.com/watch?v=b_O6-V1r_uc",
     "order": 0
   }

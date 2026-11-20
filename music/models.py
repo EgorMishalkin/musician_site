@@ -1,5 +1,18 @@
-from django.db import models
+from pathlib import Path
+
 from django.core.exceptions import ValidationError
+from django.db import models
+
+
+def album_track_audio_path(instance, filename):
+    extension = Path(filename).suffix.lower() or ".mp3"
+    return f"audio/albums/{instance.album.slug}/{instance.number:02d}{extension}"
+
+
+def single_track_audio_path(instance, filename):
+    extension = Path(filename).suffix.lower() or ".mp3"
+    return f"audio/singles/{instance.single_id}/{instance.number:02d}{extension}"
+
 
 class Album(models.Model):
     class ReleaseType(models.TextChoices):
@@ -14,7 +27,6 @@ class Album(models.Model):
         max_length=20,
         choices=ReleaseType.choices,
     )
-
     accent_color = models.CharField(max_length=7)
     order = models.PositiveSmallIntegerField(default=0)
     cover = models.ImageField(upload_to="covers/", blank=True)
@@ -28,6 +40,7 @@ class Album(models.Model):
     def __str__(self):
         return self.title
 
+
 class Track(models.Model):
     album = models.ForeignKey(
         Album,
@@ -37,10 +50,13 @@ class Track(models.Model):
     number = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=100)
     duration = models.CharField(max_length=10)
+    audio = models.FileField(
+        upload_to=album_track_audio_path,
+        blank=True,
+    )
 
     class Meta:
         ordering = ["number"]
-
         constraints = [
             models.UniqueConstraint(
                 fields=["album", "number"],
@@ -65,6 +81,33 @@ class Single(models.Model):
         return self.title
 
 
+class SingleTrack(models.Model):
+    single = models.ForeignKey(
+        Single,
+        on_delete=models.CASCADE,
+        related_name="tracks",
+    )
+    number = models.PositiveSmallIntegerField()
+    title = models.CharField(max_length=100)
+    duration = models.CharField(max_length=10, blank=True)
+    audio = models.FileField(
+        upload_to=single_track_audio_path,
+        blank=True,
+    )
+
+    class Meta:
+        ordering = ["number"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["single", "number"],
+                name="unique_track_number_per_single",
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.single.title} - {self.number}. {self.title}"
+
+
 class AlbumLink(models.Model):
     album = models.ForeignKey(
         Album,
@@ -77,7 +120,6 @@ class AlbumLink(models.Model):
 
     class Meta:
         ordering = ["order"]
-
         constraints = [
             models.UniqueConstraint(
                 fields=["album", "name"],
@@ -87,6 +129,7 @@ class AlbumLink(models.Model):
 
     def __str__(self):
         return f"{self.album.title} — {self.name}"
+
 
 class SocialLink(models.Model):
     name = models.CharField(max_length=50)
@@ -138,7 +181,6 @@ class MaterialLink(models.Model):
         blank=True,
         null=True,
     )
-
     single = models.ForeignKey(
         Single,
         on_delete=models.CASCADE,

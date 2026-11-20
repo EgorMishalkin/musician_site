@@ -8,11 +8,16 @@
 
     <title>{% block title %}хонисаклер{% endblock %}</title>
 
+    <link rel="icon" href="{% static 'music/logo.ico' %}" type="image/x-icon">
+
     <link rel="stylesheet" href="{% static 'music/style.css' %}?v=10">
+    <link rel="stylesheet" href="{% static 'music/player.css' %}?v=1">
 </head>
 
 <body>
     {% block content %}
     {% endblock %}
+
+    <script src="{% static 'music/player.js' %}?v=1" defer></script>
 </body>
 </html>

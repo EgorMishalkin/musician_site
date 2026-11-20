@@ -6,8 +6,8 @@
 
     <header class="header">
         <h1>хонисаклер</h1>
-        <div class="language-switch">
 
+        <div class="language-switch">
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.get_full_path }}">
@@ -23,7 +23,6 @@
                 <input type="hidden" name="language" value="en">
                 <button type="submit">EN</button>
             </form>
-
         </div>
     </header>
 
@@ -33,8 +32,10 @@
             <h2>{% translate "дискография" %}</h2>
 
             {% for album in albums %}
-                <a href="?album={{ album.slug }}"
-                   style="color: {{ album.accent_color }};">
+                <a
+                    href="?album={{ album.slug }}"
+                    style="color: {{ album.accent_color }};"
+                >
                     {% if album == selected_album %}→ {% endif %}
                     {{ album.title }}
                 </a>
@@ -42,23 +43,24 @@
         </div>
 
         {% if selected_album %}
-
-            <div class="album-info"
-                 style="color: {{ selected_album.accent_color }};">
-
+            <div
+                class="album-info"
+                style="color: {{ selected_album.accent_color }};"
+            >
                 <h2>{{ selected_album.title }}</h2>
 
                 <p>
                     {{ selected_album.release_year }}
-                    · {{ selected_album.release_type }}
+                    ·
+                    {{ selected_album.release_type }}
                 </p>
 
                 {% if selected_album.cover %}
-                <img
-                    class="album-cover"
-                    src="{{ selected_album.cover.url }}"
-                    alt="{{ selected_album.title }}"
-                >
+                    <img
+                        class="album-cover"
+                        src="{{ selected_album.cover.url }}"
+                        alt="{{ selected_album.title }}"
+                    >
                 {% else %}
                     <div class="cover-placeholder">
                         cover
@@ -66,258 +68,294 @@
                 {% endif %}
 
                 {% if selected_album.links.all %}
-                <div class="album-links">
-                    {% for link in selected_album.links.all %}
-                        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
-                            {{ link.name }}
-                        </a>
-                    {% endfor %}
-                </div>
+                    <div class="album-links">
+                        {% for link in selected_album.links.all %}
+                            <a
+                                href="{{ link.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ link.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
+                <a
+                    class="album-download"
+                    href="{% url 'download_album' selected_album.slug %}"
+                >
+                    скачать альбом
+                </a>
             </div>
 
-            <div class="track-list"
-                 style="color: {{ selected_album.accent_color }};">
-
+            <div
+                class="track-list"
+                style="color: {{ selected_album.accent_color }};"
+            >
                 {% for track in selected_album.tracks.all %}
-                    <div class="track">
-                        <span class="track-name">
-                            {{ track.number|stringformat:"02d" }}
-                            {{ track.title }}
-                        </span>
+                    {% if track.audio %}
+                        <div
+                            class="track playable-track"
+                            data-audio-url="{% url 'stream_album_track' track.pk %}"
+                            data-download-url="{% url 'download_album_track' track.pk %}"
+                            data-title="{{ track.title }}"
+                            data-duration="{{ track.duration }}"
+                        >
+                            <span class="track-name">
+                                {{ track.number|stringformat:"02d" }}
+                                {{ track.title }}
+                            </span>
 
-                        <span>{{ track.duration }}</span>
-                    </div>
+                            <span>{{ track.duration }}</span>
+                        </div>
+                    {% else %}
+                        <div class="track track-no-audio">
+                            <span class="track-name">
+                                {{ track.number|stringformat:"02d" }}
+                                {{ track.title }}
+                            </span>
+
+                            <span>{{ track.duration }}</span>
+                        </div>
+                    {% endif %}
                 {% endfor %}
 
                 {% if selected_album.materials.all %}
                     <div class="material-links">
                         {% for material in selected_album.materials.all %}
-                            <a href="{{ material.url }}" target="_blank" rel="noopener noreferrer">
+                            <a
+                                href="{{ material.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 {{ material.title }}
                             </a>
                         {% endfor %}
                     </div>
-{% endif %}
-
+                {% endif %}
             </div>
-
         {% endif %}
-
     </section>
 
-
     <section class="singles">
-    <h2>{% translate "синглы" %}</h2>
+        <h2>{% translate "синглы" %}</h2>
 
-    {% for single in singles %}
-        <div class="single-item">
+        {% for single in singles %}
+            {% with tracks=single.tracks.all %}
+                <div class="single-item">
+                    <div class="single">
+                        {% if tracks|length == 1 %}
+                            {% with track=tracks.0 %}
+                                {% if track.audio %}
+                                    <button
+                                        class="single-title playable-track"
+                                        type="button"
+                                        data-audio-url="{% url 'stream_single_track' track.pk %}"
+                                        data-download-url="{% url 'download_single_track' track.pk %}"
+                                        data-title="{{ track.title }}"
+                                    >
+                                        {{ single.title }}
+                                    </button>
+                                {% else %}
+                                    <span>{{ single.title }}</span>
+                                {% endif %}
+                            {% endwith %}
 
-            <div class="single">
-                {% if single.url %}
-                    <a href="{{ single.url }}"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        {{ single.title }}
-                    </a>
-                {% else %}
-                    <span>{{ single.title }}</span>
-                {% endif %}
+                        {% elif tracks|length > 1 %}
+                            <button
+                                class="single-title single-toggle"
+                                type="button"
+                            >
+                                {{ single.title }}
+                            </button>
 
-                <span>{{ single.release_year }}</span>
-            </div>
+                        {% elif single.url %}
+                            <a
+                                href="{{ single.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ single.title }}
+                            </a>
 
-            {% if single.materials.all %}
-                <div class="single-materials">
-                    {% for material in single.materials.all %}
-                        <a href="{{ material.url }}"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            {{ material.title }}
-                        </a>
-                    {% endfor %}
+                        {% else %}
+                            <span>{{ single.title }}</span>
+                        {% endif %}
+
+                        <span>{{ single.release_year }}</span>
+
+                        {% if single.url %}
+                            <a
+                                class="single-external"
+                                href="{{ single.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="открыть релиз"
+                            >
+                                ↗
+                            </a>
+                        {% endif %}
+                    </div>
+
+                    {% if tracks|length > 1 %}
+                        <div class="single-tracks" hidden>
+                            {% for track in tracks %}
+                                {% if track.audio %}
+                                    <button
+                                        class="single-track playable-track"
+                                        type="button"
+                                        data-audio-url="{% url 'stream_single_track' track.pk %}"
+                                        data-download-url="{% url 'download_single_track' track.pk %}"
+                                        data-title="{{ track.title }}"
+                                    >
+                                        {{ track.title }}
+                                    </button>
+                                {% else %}
+                                    <span class="single-track single-track-missing">
+                                        {{ track.title }}
+                                    </span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if single.materials.all %}
+                        <div class="single-materials">
+                            {% for material in single.materials.all %}
+                                <a
+                                    href="{{ material.url }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {{ material.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
-
-                </div>
-            {% endfor %}
-        </section>
-
+            {% endwith %}
+        {% endfor %}
+    </section>
 
     <section class="bottom">
         <div class="links">
             <h2>{% translate "ссылки" %}</h2>
 
             {% for link in social_links %}
-                <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="{{ link.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     {{ link.name }}
                 </a>
             {% endfor %}
         </div>
 
         {% if site_settings.artist_photo %}
-        <img
-            class="artist-photo"
-            src="{{ site_settings.artist_photo.url }}"
-            alt="хонисаклер"
-        >
-{% endif %}
+            <img
+                class="artist-photo"
+                src="{{ site_settings.artist_photo.url }}"
+                alt="хонисаклер"
+            >
+        {% endif %}
     </section>
 
     <section class="contact" id="contact">
-    <h2>{% translate "Написать" %}</h2>
+        <h2>{% translate "Написать" %}</h2>
 
-    {% if request.GET.sent %}
-        <p class="contact-success">
-            {% translate "Сообщение отправлено" %}
-        </p>
-    {% endif %}
-
-    <form method="post" class="contact-form">
-        {% csrf_token %}
-
-        <div class="contact-row">
-            {{ contact_form.name }}
-            {{ contact_form.email }}
-        </div>
-
-        <div class="contact-row">
-            {{ contact_form.subject }}
-        </div>
-
-        <div class="contact-row">
-            {{ contact_form.message }}
-        </div>
-
-        <div class="contact-bottom">
-            <label class="reply-checkbox">
-                {{ contact_form.reply_requested }}
-                <span>{% translate "Нужен ответ" %}</span>
-            </label>
-
-            <button type="submit">
-                {% translate "Отправить" %} ↗
-            </button>
-        </div>
-
-        {% if contact_form.errors %}
-            <div class="contact-errors">
-                {{ contact_form.errors }}
-            </div>
+        {% if request.GET.sent %}
+            <p class="contact-success">
+                {% translate "Сообщение отправлено" %}
+            </p>
         {% endif %}
+
+        <form method="post" class="contact-form">
+            {% csrf_token %}
+
+            <div class="contact-row">
+                {{ contact_form.name }}
+                {{ contact_form.email }}
+            </div>
+
+            <div class="contact-row">
+                {{ contact_form.subject }}
+            </div>
+
+            <div class="contact-row">
+                {{ contact_form.message }}
+            </div>
+
+            <div class="contact-bottom">
+                <label class="reply-checkbox">
+                    {{ contact_form.reply_requested }}
+                    <span>{% translate "Нужен ответ" %}</span>
+                </label>
+
+                <button type="submit">
+                    {% translate "Отправить" %} ↗
+                </button>
+            </div>
+
+            {% if contact_form.errors %}
+                <div class="contact-errors">
+                    {{ contact_form.errors }}
+                </div>
+            {% endif %}
         </form>
     </section>
 
 </main>
+
+<div id="player" class="player" hidden>
+    <div class="player-inner">
+        <button
+            id="player-toggle"
+            class="player-button"
+            type="button"
+            aria-label="play / pause"
+        >
+            ▶
+        </button>
+
+        <div class="player-info">
+            <div id="player-title" class="player-title"></div>
+
+            <div class="player-progress-row">
+                <span id="player-current">0:00</span>
+
+                <input
+                    id="player-progress"
+                    class="player-progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value="0"
+                >
+
+                <span id="player-duration">0:00</span>
+            </div>
+        </div>
+
+        <a
+            id="track-download"
+            class="download-link"
+            href="#"
+            aria-label="скачать трек"
+            title="скачать трек"
+        >
+            <svg
+                class="download-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M12 3v12"></path>
+                <path d="m7 10 5 5 5-5"></path>
+                <path d="M5 21h14"></path>
+            </svg>
+        </a>
+    </div>
+</div>
 {% endblock %}
-
-
-@media (max-width: 900px) {
-    .page {
-        padding: 24px 20px 40px;
-    }
-
-    .header {
-        align-items: center;
-    }
-
-    .discography {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-top: 70px;
-    }
-
-    .album-list {
-        margin-bottom: 10px;
-    }
-
-    .album-info {
-        width: 100%;
-    }
-
-    .album-cover,
-    .cover-placeholder {
-        width: min(400px, 100%);
-        height: auto;
-        aspect-ratio: 1 / 1;
-    }
-
-    .track-list {
-        padding-top: 0;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .track {
-        grid-template-columns: 1fr auto;
-    }
-
-    .singles {
-        margin-top: 100px;
-        width: 100%;
-    }
-
-    .bottom {
-        margin-top: 100px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 60px;
-    }
-
-    .artist-photo,
-    .photo-placeholder {
-        width: 240px;
-        height: 240px;
-        align-self: flex-end;
-    }
-
-    .contact {
-        margin-top: 100px;
-        width: 100%;
-    }
-
-    .contact-row {
-        flex-direction: column;
-    }
-}
-
-
-@media (max-width: 600px) {
-    body {
-        font-size: 13px;
-    }
-
-    .page {
-        padding: 20px 16px 35px;
-    }
-
-    .header h1 {
-        font-size: 26px;
-    }
-
-    .discography {
-        margin-top: 55px;
-        gap: 32px;
-    }
-
-    .album-cover,
-    .cover-placeholder {
-        width: 100%;
-    }
-
-    .single {
-        grid-template-columns: 1fr auto;
-    }
-
-    .artist-photo,
-    .photo-placeholder {
-        width: 200px;
-        height: 200px;
-    }
-
-    .contact-bottom {
-        align-items: flex-start;
-        gap: 20px;
-    }
-}

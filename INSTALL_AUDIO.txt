@@ -1,0 +1,32 @@
+1. Распакуй архив в:
+   C:\Users\egorm\PycharmProjects\musician_site
+
+2. Убедись, что .env содержит:
+   DJANGO_DEBUG=True
+   DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+
+3. Так как база после migrate новая, загрузи исходные данные:
+   py manage.py loaddata defense_data.json
+
+4. Импортируй MP3 из статического проекта:
+   py manage.py import_audio C:\Users\egorm\PycharmProjects\musician_site_static_working
+
+5. Проверка:
+   py manage.py check
+
+6. Запуск:
+   py manage.py runserver
+
+7. Открыть:
+   http://127.0.0.1:8000/
+
+Повторный импорт с перезаписью:
+   py manage.py import_audio C:\Users\egorm\PycharmProjects\musician_site_static_working --overwrite
+
+Что сделано:
+- MP3 хранится в Django media один раз.
+- Плеер работает через Range endpoint.
+- Можно перематывать.
+- Можно скачать текущий трек.
+- Альбом ZIP собирается на лету и не хранится второй копией.
+- Многотрековые синглы раскрываются списком.

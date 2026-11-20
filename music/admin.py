@@ -6,6 +6,7 @@ from .models import (
     ContactMessage,
     MaterialLink,
     Single,
+    SingleTrack,
     SiteSettings,
     SocialLink,
     Track,
@@ -27,6 +28,11 @@ class AlbumMaterialInline(admin.TabularInline):
     fk_name = "album"
     extra = 0
     exclude = ("single",)
+
+
+class SingleTrackInline(admin.TabularInline):
+    model = SingleTrack
+    extra = 0
 
 
 class SingleMaterialInline(admin.TabularInline):
@@ -76,8 +82,21 @@ class SingleAdmin(admin.ModelAdmin):
     list_editable = ("order",)
 
     inlines = [
+        SingleTrackInline,
         SingleMaterialInline,
     ]
+
+
+@admin.register(SingleTrack)
+class SingleTrackAdmin(admin.ModelAdmin):
+    list_display = (
+        "number",
+        "title",
+        "single",
+        "duration",
+    )
+    list_filter = ("single",)
+    ordering = ("single", "number")
 
 
 @admin.register(SocialLink)
